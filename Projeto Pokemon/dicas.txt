@@ -1,0 +1,2 @@
+Projeto Pokemon
+// Usar para filtrar os pokemons arrays. Um array com scope.pokemon e usalo para encher o array scope.pokemonLetra e usa lo quando clicar em a b ou c or exemplo.

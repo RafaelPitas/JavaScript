@@ -1,0 +1,17 @@
+h1{
+    font-style: Arial;
+    font-size: 36pt;
+    color: black;
+    margin: center;
+    margin-top: 1.5%;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+button{
+    background-color: white;
+    border-radius: 8px;
+    width: 40px;
+    height: 300px;
+}
+

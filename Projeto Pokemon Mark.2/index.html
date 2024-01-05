@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto API Pokemon</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" media="screen" href="https://www.dafont.com/pt/pokemon.font" type="text/css" />
+  <link rel="shortcut icon" href="img/ico.gif" />
+  <link rel="stylesheet" href="bootstrap/bootstrap.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+
+<body class="classPage" ng-app="myApp" ng-controller="myCtrl">
+  <div class="spinner" ng-if="!xLoader"></div>
+  <div ng-if="xLoader">
+    <header class="classPokebolaCima"><img class="classImgLogo" src="img/logopokemon.png" /></header>
+    <div class="classPokebolaMeio"></div>
+    <div class="classPokebolaBaixo"></div>
+
+    <section id="campoBuscar">
+      <h2 class="classBuscaName">Procure seu pokemon pelo nome!</h2>
+      <input id="search" class="form-control" ng-model="Search" placeholder="Digite aqui o nome..." />
+    </section>
+
+    <ol class="classLetras">
+      <a ng-click="pegar('')">
+        <li>HOME</li>
+      </a>
+      <a ng-click="pegar('a')">
+        <li>A</li>
+      </a>
+      <a ng-click="pegar('b')">
+        <li>B</li>
+      </a>
+      <a ng-click="pegar('c')">
+        <li>C</li>
+      </a>
+      <a ng-click="pegar('d')">
+        <li>D</li>
+      </a>
+      <a ng-click="pegar('e')">
+        <li>E</li>
+      </a>
+      <a ng-click="pegar('f')">
+        <li>F</li>
+      </a>
+      <a ng-click="pegar('g')">
+        <li>G</li>
+      </a>
+      <a ng-click="pegar('k')">
+        <li>H</li>
+      </a>
+      <a ng-click="pegar('i')">
+        <li>I</li>
+      </a>
+      <a ng-click="pegar('j')">
+        <li>J</li>
+      </a>
+      <a ng-click="pegar('k')">
+        <li>K</li>
+      </a>
+      <a ng-click="pegar('l')">
+        <li>L</li>
+      </a>
+      <a ng-click="pegar('m')">
+        <li>M</li>
+      </a>
+      <a ng-click="pegar('n')">
+        <li>N</li>
+      </a>
+      <a ng-click="pegar('o')">
+        <li>O</li>
+      </a>
+      <a ng-click="pegar('p')">
+        <li>P</li>
+      </a>
+      <a ng-click="pegar('q')">
+        <li>Q</li>
+      </a>
+      <a ng-click="pegar('r')">
+        <li>R</li>
+      </a>
+      <a ng-click="pegar('s')">
+        <li>S</li>
+      </a>
+      <a ng-click="pegar('t')">
+        <li>T</li>
+      </a>
+      <a ng-click="pegar('u')">
+        <li>U</li>
+      </a>
+      <a ng-click="pegar('v')">
+        <li>V</li>
+      </a>
+      <a ng-click="pegar('w')">
+        <li>W</li>
+      </a>
+      <a ng-click="pegar('x')">
+        <li>X</li>
+      </a>
+      <a ng-click="pegar('y')">
+        <li>Y</li>
+      </a>
+      <a ng-click="pegar('z')">
+        <li>Z</li>
+      </a>
+    </ol>
+
+    <div class="classTableCenter">
+      <table>
+        <tr ng-repeat="pokemon in pokemons | filter: Search">
+          <div class="classNamepk">
+            <td class="classNamePK"><b class="classLinkModal" href="#" data-toggle="modal" data-target="#basicModal"
+                ng-click="buscarPoke(pokemon.data.id)">
+                Nome: {{pokemon.name}}
+          </div>
+          <br>
+          <img src="{{pokemon.data.sprites.front_default}}" />
+          </b> </td>
+        </tr>
+      </table>
+    </div>
+
+    <div ng-repeat="PK in pokemonModal" class="modal fade" id="basicModal" tabindex="-1" role="dialog"
+      aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Nome: {{PK.name}}</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+
+          <div class="classTableCenter">
+            <table class="table" id="tabelaModal">
+
+              <tr>
+                <th>Foto do pokemon:</th>
+                <th>Forma Atual</th>
+                <th>Habilidades:</th>
+                <th>Tipo(s)</th>
+              </tr>
+
+              <tr>
+                <th>
+                  <img ng-src="{{PK.data.sprites.front_default}}" />
+                  <img ng-src="{{PK.data.sprites.back_default}}" />
+                </th>
+                <th>
+                  <h5>{{PK.data.forms[0].name}}</h5>
+                </th>
+                <th>
+                  <h5>{{PK.data.abilities[0].ability.name}}</h5>
+                  <h5>{{PK.data.abilities[1].ability.name}}</h5>
+                  <h5>{{PK.data.abilities[2].ability.name}}</h5>
+                </th>
+                <th>
+                  <h5>{{PK.data.types[0].type.name}}</h5>
+                  <h5>{{PK.data.types[1].type.name}}</h5>
+                  <h5>{{PK.data.types[2].type.name}}</h5>
+                </th>
+              </tr>
+
+            </table>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <div class="classFooterCima"></div>
+    <footer class="classFooterBaixo">
+      Created by Rafael Pitas
+    </footer>
+
+    <script src="angular.js"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </div>
+</body>
+
+</html>

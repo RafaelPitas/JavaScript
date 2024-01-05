@@ -1,0 +1,34 @@
+$texto: Arial;
+$tamanho12: 12pt;
+$tamanho10: 10pt;
+$azul: #0000ff;
+$preto: #000;
+
+h1{
+    color: $preto;
+    text-align: center;
+
+    font: {
+        family: $texto;
+        size: $tamanho12;
+        style: bold;
+    }
+}
+
+p{
+    color: $preto;
+    text-align: center;
+    font: {
+        family: $texto;
+        size: $tamanho10;
+    }
+}
+
+h2 { position: relative; }
+h2:hover { color: transparent; }
+ 
+h2:hover:after {
+    content: attr(data-hover-response);
+    color: black;
+    position: absolute;
+    left: 0;
