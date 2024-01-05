@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container" id="header">
+        <form accept-charset="UTF-8" role="form" class="form-signin" action="/catalogo" method="post">
+          <div class="row">
+            <div class="d-flex flex-grow-1 chat__header">
+              <button class="voltar"><svg width="48px" height="auto" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                </svg></button>
+              <label class="chat__label" href="" class="text">Voltar</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <button id="ClasseIdioma" data-toggle="collapse" data-target="#idioma">Idioma</button>
+    <div id="idioma" class="collapse">
+      <center>Portugues</center>
+      <center>Ingles</center>
+      <center>Espanhol</center>
+    </div>
+    <button class="ClasseNotificacoes" data-toggle="collapse" data-target="#noti">Notificações</button>
+    <div id="noti" class="collapse">
+      Notificações
+    </div>
+    <button class="ClasseConta" data-toggle="collapse" data-target="#conta">Conta</button>
+    <div id="conta" class="collapse">
+      Conta
+    </div>
+    
+      <script src="script.js"></script>
+    </body>
+    <footer class="page-footer font-small blue pt-4">
+      <div class="container" id="footer">
+        <img id="ford" src="img/ford22.png" alt="">
+      </div>
+    </footer>
+</html>
